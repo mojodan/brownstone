@@ -154,6 +154,7 @@ def download_with_yt_dlp(video_url, output_dir, verbose=False):
     cmd = [
         "yt-dlp",
         "--no-check-certificate",
+        "--legacy-server-connect",  # Help with SSL issues
         "--no-playlist",
         "-o", os.path.join(output_dir, "%(title)s.%(ext)s"),
     ]
